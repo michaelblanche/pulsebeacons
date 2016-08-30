@@ -1,0 +1,20 @@
+{
+  "name": "Pulse by SITO Mobile",
+  "description": "Setup and manage large beacon deployments with Pulse",
+  "repository": "https://github.com/michaelblanche/pulsebeacons",
+  "logo": "https://admin.beaconcontrol.io/logo.svg",
+  "env": {
+    "RAILS_ENV": "production",
+    "RACK_ENV": "production",
+    "RAILS_SERVE_STATIC_FILES": "true",
+    "MAILER_SENDER": "no-reply@sitomobile.com",
+    "REGISTRATION_MAILER_SENDER": "no-reply@sitomobile.com",
+    "SYSTEM_MAILER_RECEIVER": "no-reply@sitomobile.com",
+    "COUPON_URL": "",
+    "MAILER_HOST": ""
+  },
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate && bundle exec rake db:seed"
+  },
+  "addons": ["redistogo:nano", "sendgrid:starter"]
+}
